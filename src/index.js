@@ -8,6 +8,17 @@ import defaultProps from './defaultProps'
 
 export const ReactTableDefaults = defaultProps
 
+export class TemplateComponent extends React.Component {
+  render() {
+    let { compClass, className, children, ...rest } = this.props
+    return (
+      <div className={classnames(compClass, className)} {...rest}>
+        {children}
+      </div>
+    )
+  }
+}
+
 export default class ReactTable extends Methods(Lifecycle(Component)) {
   static defaultProps = defaultProps
 

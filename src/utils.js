@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import TemplateComponent from './index'
 //
 export default {
   get,
@@ -125,10 +126,10 @@ function makeTemplateComponent (compClass, displayName) {
   if (!displayName) {
     throw new Error('No displayName found for template component:', compClass)
   }
-  const cmp = ({ children, className, ...rest }) =>
-    <div className={classnames(compClass, className)} {...rest}>
-      {children}
-    </div>
+  const cmp = (props) => {
+    props.compClass = compClass
+    React.createElement(TemplateComponent, props)
+  }
   cmp.displayName = displayName
   return cmp
 }
