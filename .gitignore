@@ -1,8 +1,10 @@
 node_modules/
-lib/
 docs/build
-react-table.js
-react-table.css
 *.log
 .idea
 .DS_Store
+.eslintrc.js
+.travis.yml
+ISSUE_TEMPLATE.md
+umd.webpack.js
+yarn.lock
